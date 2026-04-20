@@ -1,0 +1,33 @@
+name: Auto Generate Blog Post
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate-blog-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate blog post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-blog.js
+
+      - name: Commit and push
+        run: |
+          git config user.name "Blog Bot"
+          git config user.email "bot@findsleeptime.com"
+          git add -A
+          git diff --staged --quiet || (git commit -m "Auto blog: $(date +'%Y-%m-%d')" && git push)
