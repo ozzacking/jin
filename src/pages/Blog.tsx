@@ -50,11 +50,11 @@ const Blog = ({ onNavigate }: BlogProps) => {
                 <div className="max-w-3xl mx-auto px-4 py-12">
                 
                         <div className="mb-10">
-                                  <h1 className="text-3xl md:text-4xl font-bold mb-3">Sleep Science Blog</h1>h1>
+                                  <h1 className="text-3xl md:text-4xl font-bold mb-3">Sleep Science Blog</h1>
                                   <p className="text-gray-400 text-lg">
                                               Evidence-based guides to help you sleep better, wake up refreshed, and understand your body's natural rhythms.
-                                  </p>p>
-                        </div>div>
+                                  </p>
+                        </div>
                 
                         <div className="space-y-6">
                           {posts.map((post) => (
@@ -66,37 +66,37 @@ const Blog = ({ onNavigate }: BlogProps) => {
                                       <div className="flex items-center gap-3 mb-3">
                                                       <span className="text-xs font-semibold uppercase tracking-widest text-[#7c6aff] bg-[#7c6aff]/10 px-3 py-1 rounded-full">
                                                         {post.category}
-                                                      </span>span>
-                                                      <span className="text-gray-500 text-xs">{post.date} &bull; {post.readTime}</span>span>
-                                      </div>div>
+                                                      </span>
+                                                      <span className="text-gray-500 text-xs">{post.date} &bull; {post.readTime}</span>
+                                      </div>
                                       <h2 className="text-xl font-bold mb-2 group-hover:text-[#7c6aff] transition-colors">
                                         {post.title}
-                                      </h2>h2>
+                                      </h2>
                                       <p className="text-gray-400 leading-relaxed text-sm">
                                         {post.description}
-                                      </p>p>
+                                      </p>
                                       <div className="mt-4 text-[#7c6aff] text-sm font-medium">
                                                       Read article &rarr;
-                                      </div>div>
-                        </button>button>
+                                      </div>
+                        </button>
                       ))}
-                        </div>div>
+                        </div>
                 
                         <div className="mt-12 bg-[#1a1a2e] rounded-2xl p-6 border border-[#7c6aff]/20 text-center">
-                                  <h2 className="text-xl font-bold mb-2">Ready to sleep better tonight?</h2>h2>
+                                  <h2 className="text-xl font-bold mb-2">Ready to sleep better tonight?</h2>
                                   <p className="text-gray-400 mb-4 text-sm">
                                               Use our free sleep cycle calculator to find the perfect bedtime or wake-up time.
-                                  </p>p>
+                                  </p>
                                   <button
                                                 onClick={() => onNavigate('home')}
                                                 className="bg-[#7c6aff] hover:bg-[#6b5aee] text-white font-semibold px-6 py-3 rounded-lg transition-colors"
                                               >
                                               Try the Sleep Calculator
-                                  </button>button>
-                        </div>div>
+                                  </button>
+                        </div>
                 
-                </div>div>
-          </div>div>
+                </div>
+          </div>
         );
 };
 
