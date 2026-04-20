@@ -51,8 +51,8 @@ function App() {
                                                             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
                                                           >
                                                           <Moon className="w-8 h-8 text-[#7c6aff]" />
-                                                          <span className="text-white font-bold text-lg">Sleep Cycle Calculator</span>span>
-                                            </button>button>
+                                                          <span className="text-white font-bold text-lg">Sleep Cycle Calculator</span>
+                                            </button>
                                             <div className="flex items-center gap-6">
                                                           <button
                                                                             onClick={() => setCurrentPage('home')}
@@ -61,7 +61,7 @@ function App() {
                                                                             }`}
                                                                           >
                                                                           Home
-                                                          </button>button>
+                                                          </button>
                                                           <button
                                                                             onClick={() => setCurrentPage('nap')}
                                                                             className={`text-sm font-medium transition-colors ${
@@ -69,7 +69,7 @@ function App() {
                                                                             }`}
                                                                           >
                                                                           Nap Calculator
-                                                          </button>button>
+                                                          </button>
                                                           <button
                                                                             onClick={() => setCurrentPage('caffeine')}
                                                                             className={`text-sm font-medium transition-colors ${
@@ -77,7 +77,7 @@ function App() {
                                                                             }`}
                                                                           >
                                                                           Caffeine Cutoff
-                                                          </button>button>
+                                                          </button>
                                                           <button
                                                                             onClick={() => setCurrentPage('debt')}
                                                                             className={`text-sm font-medium transition-colors ${
@@ -85,7 +85,7 @@ function App() {
                                                                             }`}
                                                                           >
                                                                           Sleep Debt
-                                                          </button>button>
+                                                          </button>
                                                           <button
                                                                             onClick={() => setCurrentPage('about')}
                                                                             className={`text-sm font-medium transition-colors ${
@@ -93,7 +93,7 @@ function App() {
                                                                             }`}
                                                                           >
                                                                           About
-                                                          </button>button>
+                                                          </button>
                                                           <button
                                                                             onClick={() => setCurrentPage('blog')}
                                                                             className={`text-sm font-medium transition-colors ${
@@ -101,21 +101,21 @@ function App() {
                                                                             }`}
                                                                           >
                                                                           Blog
-                                                          </button>button>
-                                            </div>div>
-                                </div>div>
-                      </div>div>
-              </nav>nav>
+                                                          </button>
+                                            </div>
+                                </div>
+                      </div>
+              </nav>
         
               <main>
                 {renderPage()}
-              </main>main>
+              </main>
         
               <footer className="bg-[#0d1b2a]/95 border-t border-[#7c6aff]/20 mt-16">
                       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                                 <div className="grid grid-cols-3 gap-8 mb-8">
                                             <div>
-                                                          <h4 className="text-white font-semibold mb-4">Sleep Tools</h4>h4>
+                                                          <h4 className="text-white font-semibold mb-4">Sleep Tools</h4>
                                                           <ul className="space-y-2">
                                                                           <li>
                                                                                             <button
@@ -123,36 +123,36 @@ function App() {
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Sleep Calculator
-                                                                                              </button>button>
-                                                                          </li>li>
+                                                                                              </button>
+                                                                          </li>
                                                                           <li>
                                                                                             <button
                                                                                                                   onClick={() => setCurrentPage('nap')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Nap Calculator
-                                                                                              </button>button>
-                                                                          </li>li>
+                                                                                              </button>
+                                                                          </li>
                                                                           <li>
                                                                                             <button
                                                                                                                   onClick={() => setCurrentPage('caffeine')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Caffeine Cutoff
-                                                                                              </button>button>
-                                                                          </li>li>
+                                                                                              </button>
+                                                                          </li>
                                                                           <li>
                                                                                             <button
                                                                                                                   onClick={() => setCurrentPage('debt')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Sleep Debt Tracker
-                                                                                              </button>button>
-                                                                          </li>li>
-                                                          </ul>ul>
-                                            </div>div>
+                                                                                              </button>
+                                                                          </li>
+                                                          </ul>
+                                            </div>
                                             <div>
-                                                          <h4 className="text-white font-semibold mb-4">Blog</h4>h4>
+                                                          <h4 className="text-white font-semibold mb-4">Blog</h4>
                                                           <ul className="space-y-2">
                                                                           <li>
                                                                                             <button
@@ -160,28 +160,28 @@ function App() {
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Fix Your Sleep Schedule
-                                                                                              </button>button>
-                                                                          </li>li>
+                                                                                              </button>
+                                                                          </li>
                                                                           <li>
                                                                                             <button
                                                                                                                   onClick={() => setCurrentPage('blog-wake-up-time')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Best Wake-Up Times
-                                                                                              </button>button>
-                                                                          </li>li>
+                                                                                              </button>
+                                                                          </li>
                                                                           <li>
                                                                                             <button
                                                                                                                   onClick={() => setCurrentPage('blog-sleep-cycles')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Sleep Cycles Guide
-                                                                                              </button>button>
-                                                                          </li>li>
-                                                          </ul>ul>
-                                            </div>div>
+                                                                                              </button>
+                                                                          </li>
+                                                          </ul>
+                                            </div>
                                             <div>
-                                                          <h4 className="text-white font-semibold mb-4">Resources</h4>h4>
+                                                          <h4 className="text-white font-semibold mb-4">Resources</h4>
                                                           <ul className="space-y-2">
                                                                           <li>
                                                                                             <button
@@ -189,27 +189,27 @@ function App() {
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 About Sleep Cycles
-                                                                                              </button>button>
-                                                                          </li>li>
+                                                                                              </button>
+                                                                          </li>
                                                                           <li>
                                                                                             <button
                                                                                                                   onClick={() => setCurrentPage('privacy')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Privacy Policy
-                                                                                              </button>button>
-                                                                          </li>li>
-                                                          </ul>ul>
-                                            </div>div>
-                                </div>div>
+                                                                                              </button>
+                                                                          </li>
+                                                          </ul>
+                                            </div>
+                                </div>
                                 <div className="border-t border-[#7c6aff]/20 pt-6">
                                             <p className="text-gray-400 text-sm text-center">
                                                           © 2024 Sleep Cycle Calculator. All rights reserved.
-                                            </p>p>
-                                </div>div>
-                      </div>div>
-              </footer>footer>
-        </div>div>
+                                            </p>
+                                </div>
+                      </div>
+              </footer>
+        </div>
       );
 }
 
