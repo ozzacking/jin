@@ -101,5 +101,3 @@ const Blog = ({ onNavigate }: BlogProps) => {
 };
 
 export default Blog;
-
-export default Blog;
