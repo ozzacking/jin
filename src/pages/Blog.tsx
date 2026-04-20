@@ -70,7 +70,7 @@ const Blog = ({ onNavigate }: BlogProps) => {
                                                       <span className="text-gray-500 text-xs">{post.date} &bull; {post.readTime}</span>
                                       </div>
                                       <h2 className="text-xl font-bold mb-2 group-hover:text-[#7c6aff] transition-colors">
-                                        {post.title}
+                                          {post.title}
                                       </h2>
                                       <p className="text-gray-400 leading-relaxed text-sm">
                                         {post.description}
@@ -100,4 +100,6 @@ const Blog = ({ onNavigate }: BlogProps) => {
         );
 };
 
-export default Blog;</div>
+export default Blog;
+
+export default Blog;
