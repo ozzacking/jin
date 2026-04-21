@@ -10,16 +10,26 @@ const BLOG_TSX = path.join(ROOT, 'src/pages/Blog.tsx');
 function getExistingTopics() {
   return fs.readdirSync(BLOG_DIR).filter(f => f.endsWith('.tsx')).map(f => f.replace('.tsx', ''));
 }
-async function callGemini(prompt) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-  });
-  if (!res.ok) throw new Error('API error ' + res.status + ': ' + await res.text());
-  const data = await res.json();
-  return data.candidates[0].content.parts[0].text;
+async function callGemini(prompt, retries = 3) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+  for (let i = 0; i < retries; i++) {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+    });
+    if (res.ok) {
+      const data = await res.json();
+      return data.candidates[0].content.parts[0].text;
+    }
+    const errText = await res.text();
+    if (res.status === 429 && i < retries - 1) {
+      console.log('Rate limit, retrying in 60s... (' + (i+1) + '/' + retries + ')');
+      await new Promise(r => setTimeout(r, 60000));
+      continue;
+    }
+    throw new Error('API error ' + res.status + ': ' + errText);
+  }
 }
 async function generatePost(existing) {
   const prompt = `You write sleep science articles for findsleeptime.com.\n\nEXISTING COMPONENTS (pick a DIFFERENT topic):\n${existing.join(', ')}\n\nRespond with ONLY valid JSON (no markdown, no code fences):\n{\n  "componentName": "PascalCase unique name e.g. SleepDebtGuide",\n  "slug": "kebab-case-slug",\n  "title": "Article title",\n  "description": "One sentence description",\n  "tsxContent": "FULL valid React TSX string — import React from 'react'; ... export default ComponentName;"\n}`;
