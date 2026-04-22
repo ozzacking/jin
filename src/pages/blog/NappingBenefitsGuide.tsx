@@ -1,0 +1,1 @@
+import React from 'react'; const NappingBenefitsGuide = () => { return (<div><h1>The Benefits of Napping for Better Sleep</h1><p>Napping, when done correctly, can significantly improve your mood, alertness, and performance. Learn more about the best practices for effective napping.</p></div>); }; export default NappingBenefitsGuide;
