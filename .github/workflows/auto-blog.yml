@@ -22,7 +22,7 @@ jobs:
 
       - name: Generate blog post
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/generate-blog.cjs
 
       - name: Commit and push
