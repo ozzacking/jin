@@ -7,11 +7,12 @@ import SleepDebt from './pages/SleepDebt';
 import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Blog from './pages/Blog';
+import SleepEnvironmentGuide from './pages/blog/SleepEnvironmentGuide';
 import SleepCyclesGuide from './pages/blog/SleepCyclesGuide';
 import WakeUpTime from './pages/blog/WakeUpTime';
 import FixSleepSchedule from './pages/blog/FixSleepSchedule';
 
-type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule';
+type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide';
 
 function App() {
     const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -28,7 +29,8 @@ function App() {
                     return <About />;
           case 'privacy':
                     return <Privacy />;
-          case 'blog':
+          case 'sleep-environment-guide': return <SleepEnvironmentGuide />;
+      case 'blog':
                     return <Blog onNavigate={setCurrentPage} />;
           case 'blog-sleep-cycles':
                     return <SleepCyclesGuide />;
