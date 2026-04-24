@@ -7,6 +7,7 @@ import SleepDebt from './pages/SleepDebt';
 import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Blog from './pages/Blog';
+import SleepAndMentalHealthGuide from './pages/blog/SleepAndMentalHealthGuide';
 import SleepHygieneTips from './pages/blog/SleepHygieneTips';
 import SleepQualityImprovementGuide from './pages/blog/SleepQualityImprovementGuide';
 import NappingBenefitsGuide from './pages/blog/NappingBenefitsGuide';
@@ -15,7 +16,7 @@ import SleepCyclesGuide from './pages/blog/SleepCyclesGuide';
 import WakeUpTime from './pages/blog/WakeUpTime';
 import FixSleepSchedule from './pages/blog/FixSleepSchedule';
 
-type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips';
+type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide';
 
 function App() {
     const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -36,6 +37,7 @@ function App() {
       case 'napping-benefits-guide': return <NappingBenefitsGuide />;
       case 'sleep-quality-improvement-guide': return <SleepQualityImprovementGuide />;
       case 'sleep-hygiene-tips': return <SleepHygieneTips />;
+      case 'sleep-and-mental-health-guide': return <SleepAndMentalHealthGuide />;
       case 'blog':
                     return <Blog onNavigate={setCurrentPage} />;
           case 'blog-sleep-cycles':

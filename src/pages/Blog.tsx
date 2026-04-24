@@ -1,4 +1,4 @@
-type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips';
+type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide';
 
 interface BlogPost {
     id: string;
