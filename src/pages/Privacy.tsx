@@ -6,7 +6,7 @@ export default function Privacy() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-5xl font-bold text-white mb-2">Privacy Policy</h1>
         <p className="text-xl text-gray-300 mb-12">
-          Last Updated: April 2024
+          Last Updated: April 2025
         </p>
 
         <div className="space-y-8">
@@ -154,9 +154,11 @@ export default function Privacy() {
               <p className="text-gray-300">
                 <strong>Sleep Cycle Calculator</strong>
               </p>
+              <p className="text-gray-300 text-sm mt-1">findsleeptime.com</p>
               <p className="text-gray-400 text-sm mt-2">
-                This is a demonstration website created for educational purposes.
+                Email: <a href="mailto:hello@findsleeptime.com" className="text-[#7c6aff] hover:underline">hello@findsleeptime.com</a>
               </p>
+              <p className="text-gray-400 text-sm mt-1">We typically respond within 1–2 business days.</p>
             </div>
           </div>
 
