@@ -26,7 +26,7 @@ async function callAI(prompt, retries = 3) {
       body: JSON.stringify({
         model: 'gpt-4o-mini',
         messages: [{ role: 'user', content: prompt }],
-        max_tokens: 3000
+        max_tokens: 4000
       })
     });
     if (res.ok) {
@@ -44,7 +44,33 @@ async function callAI(prompt, retries = 3) {
 }
 
 async function generatePost(existing) {
-  const prompt = `You write sleep science articles for findsleeptime.com.\n\nEXISTING COMPONENTS (pick a DIFFERENT topic):\n${existing.join(', ')}\n\nRespond with ONLY valid JSON (no markdown, no code fences):\n{\n  "componentName": "PascalCase unique name e.g. SleepDebtGuide",\n  "slug": "kebab-case-slug",\n  "title": "Article title",\n  "description": "One sentence description",\n  "tsxContent": "FULL valid React TSX string — import React from 'react'; ... export default ComponentName;"\n}`;
+  const prompt = `You write detailed, high-quality sleep science blog posts for findsleeptime.com — a sleep calculator website.
+
+EXISTING COMPONENTS (you MUST pick a completely different topic):
+${existing.join(', ')}
+
+REQUIREMENTS — follow ALL of these exactly:
+1. Write a COMPREHENSIVE article with minimum 900 words of real, informative content
+2. Include at least 6 sections with H2 headings
+3. Use Tailwind CSS with the site dark theme: bg-[#1a2f45]/50, border-[#7c6aff]/20, text-white, text-gray-300, rounded-2xl, p-8
+4. Include at least one of: a data table, a numbered list, an actionable checklist, or a tips section
+5. Each section must have 2-4 substantial paragraphs or a rich list with detailed explanations
+6. End with a "Bottom Line" or conclusion section styled with bg-blue-900/20 border border-blue-500/30
+7. Use className NOT class in all JSX
+8. The component must be a proper React functional component with full Tailwind styling
+9. DO NOT write placeholder or thin content — every section must have real, practical information
+10. The outer wrapper: <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+Topics to consider (pick one not already covered): sleep disorders, melatonin science, dream science, chronotypes, jet lag recovery, sleep and exercise, sleep and diet, teenage sleep, elderly sleep, sleep tracking, power naps, sleep deprivation effects, cognitive performance and sleep, sleep and weight loss, circadian biology, etc.
+
+Respond with ONLY valid JSON (no markdown, no code fences):
+{
+  "componentName": "PascalCase e.g. SleepAndExerciseGuide",
+  "slug": "kebab-case-slug",
+  "title": "Descriptive article title",
+  "description": "One sentence description for blog listing",
+  "tsxContent": "COMPLETE valid React TSX — import React from 'react'; ... export default ComponentName; — with full Tailwind styling and 900+ words of content"
+}`;
   const text = await callAI(prompt);
   const match = text.match(/\{[\s\S]*\}/);
   if (!match) throw new Error('No JSON found in response');
@@ -53,7 +79,10 @@ async function generatePost(existing) {
 
 function createFile(d) {
   const filePath = path.join(BLOG_DIR, d.componentName + '.tsx');
-  if (fs.existsSync(filePath)) { console.log('File exists, skip'); return false; }
+  if (fs.existsSync(filePath)) {
+    console.log('File exists, skip');
+    return false;
+  }
   fs.writeFileSync(filePath, d.tsxContent, 'utf8');
   console.log('Created', filePath);
   return true;
