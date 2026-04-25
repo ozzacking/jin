@@ -8,6 +8,7 @@ import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import SleepAndDreamScience from './pages/blog/SleepAndDreamScience';
 import SleepAndDietGuide from './pages/blog/SleepAndDietGuide';
 import SleepAndMentalHealthGuide from './pages/blog/SleepAndMentalHealthGuide';
 import SleepHygieneTips from './pages/blog/SleepHygieneTips';
@@ -18,7 +19,7 @@ import SleepCyclesGuide from './pages/blog/SleepCyclesGuide';
 import WakeUpTime from './pages/blog/WakeUpTime';
 import FixSleepSchedule from './pages/blog/FixSleepSchedule';
 
-type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide';
+type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science';
 
 function App() {
     const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -43,6 +44,7 @@ function App() {
       case 'sleep-hygiene-tips': return <SleepHygieneTips />;
       case 'sleep-and-mental-health-guide': return <SleepAndMentalHealthGuide />;
       case 'sleep-and-diet-guide': return <SleepAndDietGuide />;
+      case 'sleep-and-dream-science': return <SleepAndDreamScience />;
       case 'blog':
                     return <Blog onNavigate={setCurrentPage} />;
           case 'blog-sleep-cycles':
