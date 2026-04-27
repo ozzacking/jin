@@ -8,6 +8,7 @@ import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import SleepAndExerciseGuide from './pages/blog/SleepAndExerciseGuide';
 import SleepDeprivationEffects from './pages/blog/SleepDeprivationEffects';
 import SleepAndPerformanceGuide from './pages/blog/SleepAndPerformanceGuide';
 import SleepAndChronotypesGuide from './pages/blog/SleepAndChronotypesGuide';
@@ -22,7 +23,7 @@ import SleepCyclesGuide from './pages/blog/SleepCyclesGuide';
 import WakeUpTime from './pages/blog/WakeUpTime';
 import FixSleepSchedule from './pages/blog/FixSleepSchedule';
 
-type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science' | 'sleep-and-chronotypes-guide' | 'sleep-and-performance' | 'sleep-deprivation-effects';
+type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science' | 'sleep-and-chronotypes-guide' | 'sleep-and-performance' | 'sleep-deprivation-effects' | 'sleep-and-exercise-guide';
 
 function App() {
     const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -51,6 +52,7 @@ function App() {
       case 'sleep-and-chronotypes-guide': return <SleepAndChronotypesGuide />;
       case 'sleep-and-performance': return <SleepAndPerformanceGuide />;
       case 'sleep-deprivation-effects': return <SleepDeprivationEffects />;
+      case 'sleep-and-exercise-guide': return <SleepAndExerciseGuide />;
       case 'blog':
                     return <Blog onNavigate={setCurrentPage} />;
           case 'blog-sleep-cycles':
