@@ -8,6 +8,7 @@ import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import SleepAndJetLagRecovery from './pages/blog/SleepAndJetLagRecovery';
 import SleepAndChronotypes from './pages/blog/SleepAndChronotypes';
 import SleepAndTeenageSleep from './pages/blog/SleepAndTeenageSleep';
 import SleepAndWeightLoss from './pages/blog/SleepAndWeightLoss';
@@ -28,7 +29,7 @@ import SleepCyclesGuide from './pages/blog/SleepCyclesGuide';
 import WakeUpTime from './pages/blog/WakeUpTime';
 import FixSleepSchedule from './pages/blog/FixSleepSchedule';
 
-type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science' | 'sleep-and-chronotypes-guide' | 'sleep-and-performance' | 'sleep-deprivation-effects' | 'sleep-and-exercise-guide' | 'sleep-disorders-guide' | 'sleep-and-diet-connection' | 'sleep-and-weight-loss' | 'sleep-and-teenage-sleep' | 'understanding-chronotypes-and-their-impact-on-sleep';
+type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science' | 'sleep-and-chronotypes-guide' | 'sleep-and-performance' | 'sleep-deprivation-effects' | 'sleep-and-exercise-guide' | 'sleep-disorders-guide' | 'sleep-and-diet-connection' | 'sleep-and-weight-loss' | 'sleep-and-teenage-sleep' | 'understanding-chronotypes-and-their-impact-on-sleep' | 'sleep-and-jet-lag-recovery';
 
 function App() {
     const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -63,6 +64,7 @@ function App() {
       case 'sleep-and-weight-loss': return <SleepAndWeightLoss />;
       case 'sleep-and-teenage-sleep': return <SleepAndTeenageSleep />;
       case 'understanding-chronotypes-and-their-impact-on-sleep': return <SleepAndChronotypes />;
+      case 'sleep-and-jet-lag-recovery': return <SleepAndJetLagRecovery />;
       case 'blog':
                     return <Blog onNavigate={setCurrentPage} />;
           case 'blog-sleep-cycles':
