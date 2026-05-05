@@ -8,6 +8,7 @@ import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import CircadianBiologyGuide from './pages/blog/CircadianBiologyGuide';
 import SleepAndMelatoninScience from './pages/blog/SleepAndMelatoninScience';
 import SleepAndElderlyGuide from './pages/blog/SleepAndElderlyGuide';
 import SleepTrackingGuide from './pages/blog/SleepTrackingGuide';
@@ -32,7 +33,7 @@ import SleepCyclesGuide from './pages/blog/SleepCyclesGuide';
 import WakeUpTime from './pages/blog/WakeUpTime';
 import FixSleepSchedule from './pages/blog/FixSleepSchedule';
 
-type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science' | 'sleep-and-chronotypes-guide' | 'sleep-and-performance' | 'sleep-deprivation-effects' | 'sleep-and-exercise-guide' | 'sleep-disorders-guide' | 'sleep-and-diet-connection' | 'sleep-and-weight-loss' | 'sleep-and-teenage-sleep' | 'understanding-chronotypes-and-their-impact-on-sleep' | 'sleep-and-jet-lag-recovery' | 'sleep-tracking-guide' | 'sleep-and-elderly-guide' | 'sleep-and-melatonin-science';
+type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science' | 'sleep-and-chronotypes-guide' | 'sleep-and-performance' | 'sleep-deprivation-effects' | 'sleep-and-exercise-guide' | 'sleep-disorders-guide' | 'sleep-and-diet-connection' | 'sleep-and-weight-loss' | 'sleep-and-teenage-sleep' | 'understanding-chronotypes-and-their-impact-on-sleep' | 'sleep-and-jet-lag-recovery' | 'sleep-tracking-guide' | 'sleep-and-elderly-guide' | 'sleep-and-melatonin-science' | 'circadian-biology-guide';
 
 function App() {
     const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -71,6 +72,7 @@ function App() {
       case 'sleep-tracking-guide': return <SleepTrackingGuide />;
       case 'sleep-and-elderly-guide': return <SleepAndElderlyGuide />;
       case 'sleep-and-melatonin-science': return <SleepAndMelatoninScience />;
+      case 'circadian-biology-guide': return <CircadianBiologyGuide />;
       case 'blog':
                     return <Blog onNavigate={setCurrentPage} />;
           case 'blog-sleep-cycles':
