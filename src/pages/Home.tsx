@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Clock, ChevronDown } from 'lucide-react';
 import { calculateSleepOptions } from '../utils/sleepCalculations';
+import AdSlot from '../components/AdSlot';
 
 export default function Home() {
   const [inputTime, setInputTime] = useState('23:00');
@@ -43,7 +44,7 @@ export default function Home() {
     {
       question: 'Can I use this for naps?',
       answer:
-        'Yes! Short naps of 20-30 minutes won\'t interrupt sleep cycles. For longer naps, try 90 minutes (one full cycle) or 180 minutes (two cycles) to avoid waking during deep sleep.',
+        "Yes! Short naps of 20-30 minutes won't interrupt sleep cycles. For longer naps, try 90 minutes (one full cycle) or 180 minutes (two cycles) to avoid waking during deep sleep.",
     },
   ];
 
@@ -57,7 +58,7 @@ export default function Home() {
           Find Your Perfect Bedtime
         </p>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-3 gap-8 mb-8">
           <div className="lg:col-span-2">
             <div className="bg-[#1a2f45]/50 backdrop-blur border border-[#7c6aff]/20 rounded-2xl p-8">
               <div className="space-y-6">
@@ -113,6 +114,13 @@ export default function Home() {
                   ))}
                 </div>
 
+                {/* Ad slot: below calculator results — highest-value position */}
+                <AdSlot
+                  slot="REPLACE_WITH_SLOT_ID_1"
+                  format="auto"
+                  className="mt-2"
+                />
+
                 <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
                   <p className="text-blue-200 text-sm leading-relaxed">
                     <strong>How it works:</strong> Sleep cycles last approximately 90 minutes each. By
@@ -124,26 +132,25 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Sidebar: sticky ad */}
           <div>
-            <div className="bg-amber-900/20 border border-amber-500/30 rounded-2xl p-6 sticky top-20">
-              <h3 className="text-white font-semibold mb-4">Ad Zone</h3>
-              <div className="bg-[#0d1b2a]/50 rounded-lg h-64 border border-amber-500/20 flex items-center justify-center">
-                <p className="text-gray-400 text-sm text-center px-4">
-                  Google AdSense
-                </p>
-              </div>
+            <div className="sticky top-20">
+              <AdSlot
+                slot="REPLACE_WITH_SLOT_ID_2"
+                format="vertical"
+                style={{ minHeight: '250px' }}
+                className="bg-[#1a2f45]/30 border border-[#7c6aff]/10 rounded-2xl p-2"
+              />
             </div>
           </div>
         </div>
 
-        <div className="mb-16">
-          <div className="bg-amber-900/20 border border-amber-500/30 rounded-2xl p-6 mb-6">
-            <h3 className="text-white font-semibold text-center">Ad Zone</h3>
-            <div className="bg-[#0d1b2a]/50 rounded-lg h-24 border border-amber-500/20 flex items-center justify-center mt-4">
-              <p className="text-gray-400 text-sm">Google AdSense</p>
-            </div>
-          </div>
-        </div>
+        {/* Horizontal banner: between calculator and FAQ */}
+        <AdSlot
+          slot="REPLACE_WITH_SLOT_ID_3"
+          format="horizontal"
+          className="mb-10"
+        />
 
         <div className="bg-[#1a2f45]/50 backdrop-blur border border-[#7c6aff]/20 rounded-2xl p-8">
           <h2 className="text-3xl font-bold text-white mb-8">
