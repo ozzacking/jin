@@ -92,7 +92,7 @@ export default function SleepAndMentalHealthGuide() {
               { emoji: '🕐', title: 'Keep a consistent sleep schedule', desc: 'Go to bed and wake at the same time every day — even weekends. Irregular sleep timing disrupts circadian rhythms and increases depression risk.' },
               { emoji: '🌅', title: 'Get morning sunlight within 30 minutes of waking', desc: 'Light exposure resets your circadian clock and triggers a healthy cortisol awakening response, boosting mood and daytime alertness.' },
               { emoji: '📵', title: 'Establish a digital sunset', desc: 'Avoid screens 60 minutes before bed. Blue light suppresses melatonin, and emotionally stimulating content raises cortisol — both working against sleep.' },
-              { emoji: '✍️', title: 'Use expressive writing before bed', desc: 'Write down worries or tomorrow's tasks for 10–15 minutes before sleep. Research shows this "offloads" cognitive load and reduces pre-sleep rumination.' },
+              { emoji: '✍️', title: 'Use expressive writing before bed', desc: `Write down worries or tomorrow's tasks for 10–15 minutes before sleep. Research shows this "offloads" cognitive load and reduces pre-sleep rumination.'` },
               { emoji: '🧘', title: 'Practice 4-7-8 breathing for anxiety', desc: 'Inhale for 4 counts, hold for 7, exhale for 8. This activates the parasympathetic nervous system, reducing cortisol and preparing the body for sleep.' },
               { emoji: '🚶', title: 'Exercise regularly — but time it right', desc: 'Regular exercise reduces anxiety, depression, and sleep latency. Aim for at least 150 minutes per week, but avoid intense workouts within 3 hours of bedtime.' },
             ].map((item, i) => (
