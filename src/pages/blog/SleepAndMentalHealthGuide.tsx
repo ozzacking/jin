@@ -46,7 +46,7 @@ export default function SleepAndMentalHealthGuide() {
             {[
               { step: '1', title: 'Anxiety activates the nervous system', desc: 'Cortisol and adrenaline keep you alert, making it hard to fall or stay asleep.' },
               { step: '2', title: 'Poor sleep worsens anxiety', desc: 'Sleep deprivation increases amygdala reactivity, making you more prone to anxious thoughts.' },
-              { step: '3', title: 'Anticipatory anxiety develops', desc: 'You start worrying about whether you'll be able to sleep, which itself prevents sleep.' },
+              { step: '3', title: 'Anticipatory anxiety develops', desc: "You start worrying about whether you'll be able to sleep, which itself prevents sleep." },
               { step: '4', title: 'The cycle deepens', desc: 'The bedroom becomes associated with stress and wakefulness rather than rest.' },
             ].map(item => (
               <div key={item.step} className="flex items-start gap-3">
