@@ -99,7 +99,7 @@ function App() {
                                                           >
                                                           <Moon className="w-8 h-8 text-[#7c6aff]" />
                                                           <span className="text-white font-bold text-lg">Sleep Cycle Calculator</span>
-                                            </button
+                                            </button>
                                                                             <button
                                                                             onClick={() => setCurrentPage('contact')}
                                                                             className={`text-sm font-medium transition-colors ${
