@@ -9,6 +9,7 @@ import Privacy from './pages/Privacy';
 import Contact from './pages/Contact';
 import Recommended from './pages/Recommended';
 import Blog from './pages/Blog';
+import AnxietyAndSleepProblemsAtNight from './pages/blog/AnxietyAndSleepProblemsAtNight';
 import ChildrenSleepGuide from './pages/blog/ChildrenSleepGuide';
 import ShiftWorkerSleepGuide from './pages/blog/ShiftWorkerSleepGuide';
 import MenopauseAndSleepProblems from './pages/blog/MenopauseAndSleepProblems';
@@ -41,7 +42,7 @@ import SleepCyclesGuide from './pages/blog/SleepCyclesGuide';
 import WakeUpTime from './pages/blog/WakeUpTime';
 import FixSleepSchedule from './pages/blog/FixSleepSchedule';
 
-type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science' | 'sleep-and-chronotypes-guide' | 'sleep-and-performance' | 'sleep-deprivation-effects' | 'sleep-and-exercise-guide' | 'sleep-disorders-guide' | 'sleep-and-diet-connection' | 'sleep-and-weight-loss' | 'sleep-and-teenage-sleep' | 'understanding-chronotypes-and-their-impact-on-sleep' | 'sleep-and-jet-lag-recovery' | 'sleep-tracking-guide' | 'sleep-and-elderly-guide' | 'sleep-and-melatonin-science' | 'circadian-biology-guide' | 'recommended' | 'sound-therapy-for-sleep' | 'bedroom-environment-for-better-sleep' | 'best-mattress-for-back-pain-and-sleep' | 'insomnia-treatment-without-medication' | 'sleep-problems-during-menopause' | 'shift-work-sleep-disorder-solutions' | 'children-sleep-requirements-by-age';
+type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science' | 'sleep-and-chronotypes-guide' | 'sleep-and-performance' | 'sleep-deprivation-effects' | 'sleep-and-exercise-guide' | 'sleep-disorders-guide' | 'sleep-and-diet-connection' | 'sleep-and-weight-loss' | 'sleep-and-teenage-sleep' | 'understanding-chronotypes-and-their-impact-on-sleep' | 'sleep-and-jet-lag-recovery' | 'sleep-tracking-guide' | 'sleep-and-elderly-guide' | 'sleep-and-melatonin-science' | 'circadian-biology-guide' | 'recommended' | 'sound-therapy-for-sleep' | 'bedroom-environment-for-better-sleep' | 'best-mattress-for-back-pain-and-sleep' | 'insomnia-treatment-without-medication' | 'sleep-problems-during-menopause' | 'shift-work-sleep-disorder-solutions' | 'children-sleep-requirements-by-age' | 'anxiety-and-sleep-problems-at-night';
 
 function App() {
     const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -89,6 +90,7 @@ function App() {
       case 'sleep-problems-during-menopause': return <MenopauseAndSleepProblems />;
       case 'shift-work-sleep-disorder-solutions': return <ShiftWorkerSleepGuide />;
       case 'children-sleep-requirements-by-age': return <ChildrenSleepGuide />;
+      case 'anxiety-and-sleep-problems-at-night': return <AnxietyAndSleepProblemsAtNight />;
       case 'blog':
                     return <Blog onNavigate={setCurrentPage} />;
           case 'blog-sleep-cycles':
