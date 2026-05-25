@@ -9,6 +9,7 @@ import Privacy from './pages/Privacy';
 import Contact from './pages/Contact';
 import Recommended from './pages/Recommended';
 import Blog from './pages/Blog';
+import BestSleepTracker2025Comparison from './pages/blog/BestSleepTracker2025Comparison';
 import BestSleepTracker2025Guide from './pages/blog/BestSleepTracker2025Guide';
 import InsomniaTreatmentWithoutMedicationGuide from './pages/blog/InsomniaTreatmentWithoutMedicationGuide';
 import SleepSupplementsReviewed from './pages/blog/SleepSupplementsReviewed';
@@ -53,7 +54,7 @@ import SleepCyclesGuide from './pages/blog/SleepCyclesGuide';
 import WakeUpTime from './pages/blog/WakeUpTime';
 import FixSleepSchedule from './pages/blog/FixSleepSchedule';
 
-type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science' | 'sleep-and-chronotypes-guide' | 'sleep-and-performance' | 'sleep-deprivation-effects' | 'sleep-and-exercise-guide' | 'sleep-disorders-guide' | 'sleep-and-diet-connection' | 'sleep-and-weight-loss' | 'sleep-and-teenage-sleep' | 'understanding-chronotypes-and-their-impact-on-sleep' | 'sleep-and-jet-lag-recovery' | 'sleep-tracking-guide' | 'sleep-and-elderly-guide' | 'sleep-and-melatonin-science' | 'circadian-biology-guide' | 'recommended' | 'sound-therapy-for-sleep' | 'bedroom-environment-for-better-sleep' | 'best-mattress-for-back-pain-and-sleep' | 'insomnia-treatment-without-medication' | 'sleep-problems-during-menopause' | 'shift-work-sleep-disorder-solutions' | 'children-sleep-requirements-by-age' | 'anxiety-and-sleep-problems-at-night' | 'melatonin-dosage-timing-effectiveness' | 'sleep-deprivation-health-risks' | 'sleep-and-weight-loss-connection' | 'menopause-and-sleep-problems-guide' | 'melatonin-dosage-timing-effectiveness' | 'best-sleep-tracker-2025' | 'how-to-fix-sleep-schedule-quickly' | 'best-mattress-for-back-pain-and-sleep' | 'sleep-supplements-reviewed' | 'insomnia-treatment-without-medication' | 'best-sleep-tracker-2025';
+type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science' | 'sleep-and-chronotypes-guide' | 'sleep-and-performance' | 'sleep-deprivation-effects' | 'sleep-and-exercise-guide' | 'sleep-disorders-guide' | 'sleep-and-diet-connection' | 'sleep-and-weight-loss' | 'sleep-and-teenage-sleep' | 'understanding-chronotypes-and-their-impact-on-sleep' | 'sleep-and-jet-lag-recovery' | 'sleep-tracking-guide' | 'sleep-and-elderly-guide' | 'sleep-and-melatonin-science' | 'circadian-biology-guide' | 'recommended' | 'sound-therapy-for-sleep' | 'bedroom-environment-for-better-sleep' | 'best-mattress-for-back-pain-and-sleep' | 'insomnia-treatment-without-medication' | 'sleep-problems-during-menopause' | 'shift-work-sleep-disorder-solutions' | 'children-sleep-requirements-by-age' | 'anxiety-and-sleep-problems-at-night' | 'melatonin-dosage-timing-effectiveness' | 'sleep-deprivation-health-risks' | 'sleep-and-weight-loss-connection' | 'menopause-and-sleep-problems-guide' | 'melatonin-dosage-timing-effectiveness' | 'best-sleep-tracker-2025' | 'how-to-fix-sleep-schedule-quickly' | 'best-mattress-for-back-pain-and-sleep' | 'sleep-supplements-reviewed' | 'insomnia-treatment-without-medication' | 'best-sleep-tracker-2025' | 'best-sleep-tracker-2025-comparison';
 
 function App() {
     const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -113,6 +114,7 @@ function App() {
       case 'sleep-supplements-reviewed': return <SleepSupplementsReviewed />;
       case 'insomnia-treatment-without-medication': return <InsomniaTreatmentWithoutMedicationGuide />;
       case 'best-sleep-tracker-2025': return <BestSleepTracker2025Guide />;
+      case 'best-sleep-tracker-2025-comparison': return <BestSleepTracker2025Comparison />;
       case 'blog':
                     return <Blog onNavigate={setCurrentPage} />;
           case 'blog-sleep-cycles':
