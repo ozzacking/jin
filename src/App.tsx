@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Moon } from 'lucide-react';
 import Home from './pages/Home';
 import NapCalculator from './pages/NapCalculator';
@@ -79,8 +79,37 @@ import FixSleepSchedule from './pages/blog/FixSleepSchedule';
 
 type Page = 'home' | 'nap' | 'caffeine' | 'debt' | 'about' | 'privacy' | 'contact' | 'blog' | 'blog-sleep-cycles' | 'blog-wake-up-time' | 'blog-fix-sleep-schedule' | 'sleep-environment-guide' | 'napping-benefits-guide' | 'sleep-quality-improvement-guide' | 'sleep-hygiene-tips' | 'sleep-and-mental-health-guide' | 'sleep-and-diet-guide' | 'sleep-and-dream-science' | 'sleep-and-chronotypes-guide' | 'sleep-and-performance' | 'sleep-deprivation-effects' | 'sleep-and-exercise-guide' | 'sleep-disorders-guide' | 'sleep-and-diet-connection' | 'sleep-and-weight-loss' | 'sleep-and-teenage-sleep' | 'understanding-chronotypes-and-their-impact-on-sleep' | 'sleep-and-jet-lag-recovery' | 'sleep-tracking-guide' | 'sleep-and-elderly-guide' | 'sleep-and-melatonin-science' | 'circadian-biology-guide' | 'recommended' | 'sound-therapy-for-sleep' | 'bedroom-environment-for-better-sleep' | 'best-mattress-for-back-pain-and-sleep' | 'insomnia-treatment-without-medication' | 'sleep-problems-during-menopause' | 'shift-work-sleep-disorder-solutions' | 'children-sleep-requirements-by-age' | 'anxiety-and-sleep-problems-at-night' | 'melatonin-dosage-timing-effectiveness' | 'sleep-deprivation-health-risks' | 'sleep-and-weight-loss-connection' | 'menopause-and-sleep-problems-guide' | 'melatonin-dosage-timing-effectiveness' | 'best-sleep-tracker-2025' | 'how-to-fix-sleep-schedule-quickly' | 'best-mattress-for-back-pain-and-sleep' | 'sleep-supplements-reviewed' | 'insomnia-treatment-without-medication' | 'best-sleep-tracker-2025' | 'best-sleep-tracker-2025-comparison' | 'children-sleep-requirements-by-age' | 'shift-work-sleep-disorder-solutions-guide' | 'sleep-supplements-that-actually-work' | 'how-to-fix-sleep-schedule-quickly' | 'how-to-fix-sleep-schedule-quickly' | 'sound-therapy-for-sleep' | 'sleep-apnea-symptoms-and-treatment-guide' | 'sleep-supplements-reviewed' | 'melatonin-dosage-timing-effectiveness' | 'mattress-guide-for-back-pain-and-sleep' | 'how-to-fix-sleep-schedule-quickly' | 'how-to-fix-sleep-schedule-quickly' | 'children-sleep-requirements-by-age' | 'how-to-fix-sleep-schedule-quickly' | 'how-to-fix-sleep-schedule-quickly' | 'sleep-supplements-reviewed' | 'how-to-fix-sleep-schedule-quickly' | 'menopause-sleep-problems-guide' | 'sleep-and-weight-loss-connection' | 'white-noise-machine-for-sleep' | 'bedroom-environment-better-sleep' | 'melatonin-dosage-timing-effectiveness-review' | 'melatonin-dosage-timing-effectiveness';
 
+const PATH_ALIASES: Record<string, string> = {
+  home: '',
+  nap: 'nap-calculator',
+  caffeine: 'caffeine-cutoff',
+  debt: 'sleep-debt',
+};
+
+const pathForPage = (page: Page): string =>
+  '/' + (page in PATH_ALIASES ? PATH_ALIASES[page] : page);
+
+const pageForPath = (path: string): Page => {
+  const slug = path.replace(/\/+$/, '').replace(/^\//, '');
+  if (!slug) return 'home';
+  const alias = Object.entries(PATH_ALIASES).find(([, p]) => p === slug);
+  return (alias ? alias[0] : slug) as Page;
+};
+
 function App() {
-    const [currentPage, setCurrentPage] = useState<Page>('home');
+    const [currentPage, setCurrentPage] = useState<Page>(() => pageForPath(window.location.pathname));
+
+  const navigate = (page: Page) => {
+    setCurrentPage(page);
+    window.history.pushState({}, '', pathForPage(page));
+    window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    const onPopState = () => setCurrentPage(pageForPath(window.location.pathname));
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
 
   const renderPage = () => {
         switch (currentPage) {
@@ -162,7 +191,7 @@ function App() {
       case 'melatonin-dosage-timing-effectiveness-review': return <MelatoninDosageTimingEffectivenessReview />;
       case 'melatonin-dosage-timing-effectiveness': return <MelatoninDosageTimingAndEffectiveness />;
       case 'blog':
-                    return <Blog onNavigate={setCurrentPage} />;
+                    return <Blog onNavigate={navigate} />;
           case 'blog-sleep-cycles':
                     return <SleepCyclesGuide />;
           case 'blog-wake-up-time':
@@ -180,14 +209,14 @@ function App() {
                       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <div className="flex items-center justify-between h-16">
                                             <button
-                                                            onClick={() => setCurrentPage('home')}
+                                                            onClick={() => navigate('home')}
                                                             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
                                                           >
                                                           <Moon className="w-8 h-8 text-[#7c6aff]" />
                                                           <span className="text-white font-bold text-lg">Sleep Cycle Calculator</span>
                                             </button>
                                                                             <button
-                                                                            onClick={() => setCurrentPage('contact')}
+                                                                            onClick={() => navigate('contact')}
                                                                             className={`text-sm font-medium transition-colors ${
                                                                                                 currentPage === 'contact' ? 'text-[#7c6aff]' : 'text-gray-300 hover:text-white'
                                                                                             }`}
@@ -196,7 +225,7 @@ function App() {
                                                                             </button>
                                             <div className="flex items-center gap-6">
                                                           <button
-                                                                            onClick={() => setCurrentPage('home')}
+                                                                            onClick={() => navigate('home')}
                                                                             className={`text-sm font-medium transition-colors ${
                                                                                                 currentPage === 'home' ? 'text-[#7c6aff]' : 'text-gray-300 hover:text-white'
                                                                             }`}
@@ -204,7 +233,7 @@ function App() {
                                                                           Home
                                                           </button>
                                                           <button
-                                                                            onClick={() => setCurrentPage('nap')}
+                                                                            onClick={() => navigate('nap')}
                                                                             className={`text-sm font-medium transition-colors ${
                                                                                                 currentPage === 'nap' ? 'text-[#7c6aff]' : 'text-gray-300 hover:text-white'
                                                                             }`}
@@ -212,7 +241,7 @@ function App() {
                                                                           Nap Calculator
                                                           </button>
                                                           <button
-                                                                            onClick={() => setCurrentPage('caffeine')}
+                                                                            onClick={() => navigate('caffeine')}
                                                                             className={`text-sm font-medium transition-colors ${
                                                                                                 currentPage === 'caffeine' ? 'text-[#7c6aff]' : 'text-gray-300 hover:text-white'
                                                                             }`}
@@ -220,7 +249,7 @@ function App() {
                                                                           Caffeine Cutoff
                                                           </button>
                                                           <button
-                                                                            onClick={() => setCurrentPage('debt')}
+                                                                            onClick={() => navigate('debt')}
                                                                             className={`text-sm font-medium transition-colors ${
                                                                                                 currentPage === 'debt' ? 'text-[#7c6aff]' : 'text-gray-300 hover:text-white'
                                                                             }`}
@@ -228,7 +257,7 @@ function App() {
                                                                           Sleep Debt
                                                           </button>
                                                           <button
-                                                                            onClick={() => setCurrentPage('about')}
+                                                                            onClick={() => navigate('about')}
                                                                             className={`text-sm font-medium transition-colors ${
                                                                                                 currentPage === 'about' ? 'text-[#7c6aff]' : 'text-gray-300 hover:text-white'
                                                                             }`}
@@ -236,7 +265,7 @@ function App() {
                                                                           About
                                                           </button>
                                                           <button
-                                                                            onClick={() => setCurrentPage('blog')}
+                                                                            onClick={() => navigate('blog')}
                                                                             className={`text-sm font-medium transition-colors ${
                                                                                                 currentPage === 'blog' || currentPage === 'blog-sleep-cycles' || currentPage === 'blog-wake-up-time' || currentPage === 'blog-fix-sleep-schedule' ? 'text-[#7c6aff]' : 'text-gray-300 hover:text-white'
                                                                             }`}
@@ -244,7 +273,7 @@ function App() {
                                                                           Blog
                                                           </button>
                                                           <button
-                                                                            onClick={() => setCurrentPage('recommended')}
+                                                                            onClick={() => navigate('recommended')}
                                                                             className={`text-sm font-medium transition-colors ${currentPage === 'recommended' ? 'text-[#7c6aff]' : 'text-gray-300 hover:text-white'}`}
                                                                           >
                                                                           Shop
@@ -266,7 +295,7 @@ function App() {
                                                           <ul className="space-y-2">
                                                                           <li>
                                                                                             <button
-                                                                                                                  onClick={() => setCurrentPage('home')}
+                                                                                                                  onClick={() => navigate('home')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Sleep Calculator
@@ -274,7 +303,7 @@ function App() {
                                                                           </li>
                                                                           <li>
                                                                                             <button
-                                                                                                                  onClick={() => setCurrentPage('nap')}
+                                                                                                                  onClick={() => navigate('nap')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Nap Calculator
@@ -282,7 +311,7 @@ function App() {
                                                                           </li>
                                                                           <li>
                                                                                             <button
-                                                                                                                  onClick={() => setCurrentPage('caffeine')}
+                                                                                                                  onClick={() => navigate('caffeine')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Caffeine Cutoff
@@ -290,7 +319,7 @@ function App() {
                                                                           </li>
                                                                           <li>
                                                                                             <button
-                                                                                                                  onClick={() => setCurrentPage('debt')}
+                                                                                                                  onClick={() => navigate('debt')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Sleep Debt Tracker
@@ -303,7 +332,7 @@ function App() {
                                                           <ul className="space-y-2">
                                                                           <li>
                                                                                             <button
-                                                                                                                  onClick={() => setCurrentPage('blog-fix-sleep-schedule')}
+                                                                                                                  onClick={() => navigate('blog-fix-sleep-schedule')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Fix Your Sleep Schedule
@@ -311,7 +340,7 @@ function App() {
                                                                           </li>
                                                                           <li>
                                                                                             <button
-                                                                                                                  onClick={() => setCurrentPage('blog-wake-up-time')}
+                                                                                                                  onClick={() => navigate('blog-wake-up-time')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Best Wake-Up Times
@@ -319,7 +348,7 @@ function App() {
                                                                           </li>
                                                                           <li>
                                                                                             <button
-                                                                                                                  onClick={() => setCurrentPage('blog-sleep-cycles')}
+                                                                                                                  onClick={() => navigate('blog-sleep-cycles')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Sleep Cycles Guide
@@ -332,7 +361,7 @@ function App() {
                                                           <ul className="space-y-2">
                                                                           <li>
                                                                                             <button
-                                                                                                                  onClick={() => setCurrentPage('about')}
+                                                                                                                  onClick={() => navigate('about')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 About Sleep Cycles
@@ -340,7 +369,7 @@ function App() {
                                                                           </li>
                                                                           <li>
                                                                                             <button
-                                                                                                                  onClick={() => setCurrentPage('privacy')}
+                                                                                                                  onClick={() => navigate('privacy')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Privacy Policy
@@ -348,7 +377,7 @@ function App() {
                                                                           </li>
                                                                           <li>
                                                                                             <button
-                                                                                                                  onClick={() => setCurrentPage('recommended')}
+                                                                                                                  onClick={() => navigate('recommended')}
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Recommended
