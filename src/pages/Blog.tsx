@@ -10,7 +10,7 @@ interface BlogPost {
     date: string;
 }
 
-const posts: BlogPost[] = [
+export const posts: BlogPost[] = [
   {
         id: 'sleep-temperature-and-thermoregulation-guide',
         page: 'sleep-temperature-and-thermoregulation-guide',

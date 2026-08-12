@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Clock, ChevronDown } from 'lucide-react';
 import { calculateSleepOptions } from '../utils/sleepCalculations';
-import AdSlot from '../components/AdSlot';
 
 export default function Home() {
   const [inputTime, setInputTime] = useState('23:00');
@@ -114,13 +113,6 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* Ad slot: below calculator results — highest-value position */}
-                <AdSlot
-                  slot="REPLACE_WITH_SLOT_ID_1"
-                  format="auto"
-                  className="mt-2"
-                />
-
                 <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
                   <p className="text-blue-200 text-sm leading-relaxed">
                     <strong>How it works:</strong> Sleep cycles last approximately 90 minutes each. By
@@ -132,25 +124,17 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Sidebar: sticky ad */}
+          {/* Sidebar: sleep tip callout */}
           <div>
-            <div className="sticky top-20">
-              <AdSlot
-                slot="REPLACE_WITH_SLOT_ID_2"
-                format="vertical"
-                style={{ minHeight: '250px' }}
-                className="bg-[#1a2f45]/30 border border-[#7c6aff]/10 rounded-2xl p-2"
-              />
+            <div className="sticky top-20 bg-[#1a2f45]/30 border border-[#7c6aff]/10 rounded-2xl p-6">
+              <h3 className="text-white font-semibold mb-2">Did you know?</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Most adults need 4-6 complete 90-minute sleep cycles per night. Waking up between
+                cycles — not during one — is the key to feeling rested.
+              </p>
             </div>
           </div>
         </div>
-
-        {/* Horizontal banner: between calculator and FAQ */}
-        <AdSlot
-          slot="REPLACE_WITH_SLOT_ID_3"
-          format="horizontal"
-          className="mb-10"
-        />
 
         <div className="bg-[#1a2f45]/50 backdrop-blur border border-[#7c6aff]/20 rounded-2xl p-8">
           <h2 className="text-3xl font-bold text-white mb-8">

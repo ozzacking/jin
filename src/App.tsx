@@ -8,7 +8,7 @@ import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Contact from './pages/Contact';
 import Recommended from './pages/Recommended';
-import Blog from './pages/Blog';
+import Blog, { posts } from './pages/Blog';
 import SleepTemperatureAndThermoregulationGuide from './pages/blog/SleepTemperatureAndThermoregulationGuide';
 import BestPillowForNeckPainAndSleepGuide from './pages/blog/BestPillowForNeckPainAndSleepGuide';
 import CollegeStudentsSleepDeprivationCrisis from './pages/blog/CollegeStudentsSleepDeprivationCrisis';
@@ -67,6 +67,56 @@ const pageForPath = (path: string): Page => {
   return (alias ? alias[0] : slug) as Page;
 };
 
+const STATIC_META: Partial<Record<Page, { title: string; description: string }>> = {
+  home: {
+    title: 'Sleep Cycle Calculator - Find Your Best Bedtime & Wake-Up Time',
+    description:
+      'Calculate the ideal bedtime or wake-up time based on 90-minute sleep cycles so you wake up refreshed, not groggy.',
+  },
+  nap: {
+    title: 'Nap Time Calculator - Find Your Optimal Nap Length',
+    description:
+      'Find the perfect nap length before your next commitment, from a 20-minute power nap to a full 90-minute cycle.',
+  },
+  caffeine: {
+    title: 'Caffeine Cutoff Calculator - When to Stop Drinking Coffee',
+    description:
+      'Calculate the latest time you should have caffeine based on your bedtime, using caffeine\'s ~5 hour half-life.',
+  },
+  debt: {
+    title: 'Sleep Debt Calculator - Track Your Sleep Deficit',
+    description:
+      'Track how much sleep you owe your body over time and get a plan for paying off chronic sleep debt.',
+  },
+  about: {
+    title: 'About Us - Sleep Cycle Calculator',
+    description: 'Learn about the team behind Sleep Cycle Calculator and our mission to help you sleep better.',
+  },
+  privacy: {
+    title: 'Privacy Policy - Sleep Cycle Calculator',
+    description: 'Read our privacy policy to understand how Sleep Cycle Calculator collects and uses your data.',
+  },
+  contact: {
+    title: 'Contact Us - Sleep Cycle Calculator',
+    description: 'Get in touch with the Sleep Cycle Calculator team with questions, feedback, or partnership ideas.',
+  },
+  blog: {
+    title: 'Sleep Science Blog - Evidence-Based Sleep Guides',
+    description:
+      'Evidence-based guides to help you sleep better, wake up refreshed, and understand your body\'s natural rhythms.',
+  },
+  recommended: {
+    title: 'Recommended Sleep Products - Sleep Cycle Calculator',
+    description: 'Our picks for sleep products that can help you build better sleep habits.',
+  },
+};
+
+const BLOG_META: Partial<Record<Page, { title: string; description: string }>> = Object.fromEntries(
+  posts.map((post) => [post.page, { title: `${post.title} | Sleep Cycle Calculator`, description: post.description }])
+);
+
+const getPageMeta = (page: Page) => STATIC_META[page] ?? BLOG_META[page];
+
 function App() {
     const [currentPage, setCurrentPage] = useState<Page>(() => pageForPath(window.location.pathname));
 
@@ -81,6 +131,19 @@ function App() {
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
+
+  useEffect(() => {
+    const meta = getPageMeta(currentPage);
+    if (!meta) return;
+    document.title = meta.title;
+    let descTag = document.querySelector('meta[name="description"]');
+    if (!descTag) {
+      descTag = document.createElement('meta');
+      descTag.setAttribute('name', 'description');
+      document.head.appendChild(descTag);
+    }
+    descTag.setAttribute('content', meta.description);
+  }, [currentPage]);
 
   const renderPage = () => {
         switch (currentPage) {

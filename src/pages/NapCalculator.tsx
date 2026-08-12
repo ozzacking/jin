@@ -111,13 +111,6 @@ export default function NapCalculator() {
             </div>
           </div>
         </div>
-
-        <div className="bg-amber-900/20 border border-amber-500/30 rounded-2xl p-6">
-          <h3 className="text-white font-semibold mb-4 text-center">Ad Zone</h3>
-          <div className="bg-[#0d1b2a]/50 rounded-lg h-64 border border-amber-500/20 flex items-center justify-center">
-            <p className="text-gray-400 text-sm">Google AdSense</p>
-          </div>
-        </div>
       </div>
     </div>
   );
