@@ -23,7 +23,9 @@ const indexHtml = readFileSync(join(dist, 'index.html'), 'utf8');
 // SPA fallback for unknown paths
 writeFileSync(join(dist, '404.html'), indexHtml);
 
+const EXCLUDED_FROM_SITEMAP = ['recommended'];
 const routes = slugs.filter(Boolean);
+const sitemapRoutes = routes.filter((s) => !EXCLUDED_FROM_SITEMAP.includes(s));
 for (const slug of routes) {
   const dir = join(dist, slug);
   mkdirSync(dir, { recursive: true });
@@ -31,7 +33,7 @@ for (const slug of routes) {
 }
 
 const today = new Date().toISOString().slice(0, 10);
-const urlEntries = ['', ...routes]
+const urlEntries = ['', ...sitemapRoutes]
   .map(
     (s) =>
       `  <url>\n    <loc>${SITE}/${s}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`

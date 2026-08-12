@@ -277,12 +277,6 @@ function App() {
                                                                           >
                                                                           Blog
                                                           </button>
-                                                          <button
-                                                                            onClick={() => navigate('recommended')}
-                                                                            className={`text-sm font-medium transition-colors ${currentPage === 'recommended' ? 'text-[#7c6aff]' : 'text-gray-300 hover:text-white'}`}
-                                                                          >
-                                                                          Shop
-                                                          </button>
                                             </div>
                                 </div>
                       </div>
@@ -378,14 +372,6 @@ function App() {
                                                                                                                   className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
                                                                                                                 >
                                                                                                                 Privacy Policy
-                                                                                              </button>
-                                                                          </li>
-                                                                          <li>
-                                                                                            <button
-                                                                                                                  onClick={() => navigate('recommended')}
-                                                                                                                  className="text-gray-300 hover:text-[#7c6aff] text-sm transition-colors"
-                                                                                                                >
-                                                                                                                Recommended
                                                                                               </button>
                                                                           </li>
                                                           </ul>
