@@ -15,7 +15,7 @@ interface AdSlotProps {
  * AdSlot — Google AdSense display ad unit.
  * Usage: <AdSlot slot="1234567890" format="auto" />
  * Get slot IDs from: AdSense → Ads → By ad unit → Display ads
- * pub-id: ca-pub-3638001704763396
+ * pub-id: ca-pub-4468761919656648
  */
 export default function AdSlot({ slot, format = 'auto', style, className = '' }: AdSlotProps) {
   const pushed = useRef(false);
@@ -33,7 +33,7 @@ export default function AdSlot({ slot, format = 'auto', style, className = '' }:
       <ins
         className="adsbygoogle"
         style={{ display: 'block', ...style }}
-        data-ad-client="ca-pub-3638001704763396"
+        data-ad-client="ca-pub-4468761919656648"
         data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive="true"
