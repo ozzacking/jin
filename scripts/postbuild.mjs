@@ -22,7 +22,10 @@ const app = readFileSync('src/App.tsx', 'utf8');
 const caseSlugs = [...app.matchAll(/case '([^']+)':/g)].map((m) => m[1]);
 const ids = [...new Set(['home', 'nap', 'caffeine', 'debt', ...caseSlugs])];
 const slugs = [...new Set(ids.map((id) => PATH_ALIASES[id] ?? id))];
-const routes = slugs.filter(Boolean); // non-home routes
+const EXCLUDED = ['recommended']; // affiliate/Amazon page — kept off nav, sitemap, AND out of the
+// static content build until real Amazon Associates approval exists, so it never becomes a
+// crawlable "mostly outbound links" page during AdSense review.
+const routes = slugs.filter((s) => s && !EXCLUDED.includes(s)); // non-home, non-excluded routes
 
 const dist = 'dist';
 const rawShell = readFileSync(join(dist, 'index.html'), 'utf8');
@@ -66,6 +69,12 @@ const PORT = 5799;
 const server = await serveStatic(dist, PORT);
 const browser = await chromium.launch();
 const page = await browser.newPage();
+
+// Block real AdSense/ad-network requests during prerendering — the adsbygoogle
+// script tag in <head> fires real page-level ad requests as soon as it loads,
+// and Google's response injects DOM (with this localhost prerender URL baked
+// into it) that would otherwise get captured into the "static" snapshot.
+await page.route(/googlesyndication\.com|doubleclick\.net|googleadservices\.com|google-analytics\.com|googletagmanager\.com/, (route) => route.abort());
 
 async function renderRoute(slug) {
   const url = `http://127.0.0.1:${PORT}/${slug}`;
