@@ -14,7 +14,6 @@ import BestPillowForNeckPainAndSleepGuide from './pages/blog/BestPillowForNeckPa
 import CollegeStudentsSleepDeprivationCrisis from './pages/blog/CollegeStudentsSleepDeprivationCrisis';
 import SleepApneaGuide from './pages/blog/SleepApneaGuide';
 import SleepSupplementsReviewed from './pages/blog/SleepSupplementsReviewed';
-import SleepScheduleResetGuide from './pages/blog/SleepScheduleResetGuide';
 import BestSleepTracker2025 from './pages/blog/BestSleepTracker2025';
 import MelatoninDosageTimingEffectiveness from './pages/blog/MelatoninDosageTimingEffectiveness';
 import AnxietyAndSleepProblemsAtNight from './pages/blog/AnxietyAndSleepProblemsAtNight';
@@ -23,7 +22,6 @@ import ShiftWorkerSleepGuide from './pages/blog/ShiftWorkerSleepGuide';
 import MenopauseAndSleepProblems from './pages/blog/MenopauseAndSleepProblems';
 import InsomniaTreatmentWithoutMedication from './pages/blog/InsomniaTreatmentWithoutMedication';
 import BestMattressForBackPainAndSleepGuide from './pages/blog/BestMattressForBackPainAndSleepGuide';
-import BedroomOptimizationGuide from './pages/blog/BedroomOptimizationGuide';
 import SoundTherapyForSleep from './pages/blog/SoundTherapyForSleep';
 import CircadianBiologyGuide from './pages/blog/CircadianBiologyGuide';
 import SleepAndMelatoninScience from './pages/blog/SleepAndMelatoninScience';
@@ -180,7 +178,6 @@ function App() {
       case 'circadian-biology-guide': return <CircadianBiologyGuide />;
       case 'recommended': return <Recommended />;
       case 'sound-therapy-for-sleep': return <SoundTherapyForSleep />;
-      case 'bedroom-environment-for-better-sleep': return <BedroomOptimizationGuide />;
       case 'best-mattress-for-back-pain-and-sleep': return <BestMattressForBackPainAndSleepGuide />;
       case 'insomnia-treatment-without-medication': return <InsomniaTreatmentWithoutMedication />;
       case 'sleep-problems-during-menopause': return <MenopauseAndSleepProblems />;
@@ -189,7 +186,6 @@ function App() {
       case 'anxiety-and-sleep-problems-at-night': return <AnxietyAndSleepProblemsAtNight />;
       case 'melatonin-dosage-timing-effectiveness': return <MelatoninDosageTimingEffectiveness />;
       case 'best-sleep-tracker-2025': return <BestSleepTracker2025 />;
-      case 'how-to-fix-sleep-schedule-quickly': return <SleepScheduleResetGuide />;
       case 'sleep-supplements-reviewed': return <SleepSupplementsReviewed />;
       case 'sleep-apnea-symptoms-and-treatment-guide': return <SleepApneaGuide />;
       case 'college-students-sleep-deprivation-crisis': return <CollegeStudentsSleepDeprivationCrisis />;

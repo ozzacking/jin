@@ -248,7 +248,7 @@ export default function SleepDebt() {
                 guide to sleep deprivation's effects
               </a>{' '}
               covers what's actually happening in your body during a prolonged debt, and the{' '}
-              <a href="/how-to-fix-sleep-schedule-quickly" className="text-[#7c6aff] hover:underline">
+              <a href="/blog-fix-sleep-schedule" className="text-[#7c6aff] hover:underline">
                 sleep schedule reset guide
               </a>{' '}
               lays out a concrete week-by-week plan for paying it back.
