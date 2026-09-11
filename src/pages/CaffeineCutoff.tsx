@@ -114,6 +114,53 @@ export default function CaffeineCutoff() {
             </div>
           </div>
         </div>
+
+        <div className="bg-[#1a2f45]/50 backdrop-blur border border-[#7c6aff]/20 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-white mb-6">Why Caffeine Sticks Around Longer Than You Think</h2>
+          <div className="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              I used to think caffeine was basically gone from my system a couple hours after my
+              last cup. It's not even close. Caffeine has a half-life of roughly five hours in most
+              adults, which means five hours after your last sip, about half of it is still active
+              in your bloodstream. Ten hours out, a quarter of it is still there, quietly keeping
+              your nervous system a little more alert than it would otherwise be — right when
+              you're trying to wind down for bed.
+            </p>
+            <p>
+              That's the part people underestimate. A 3 PM coffee doesn't feel like it's doing
+              anything by 10 PM — no jitters, no buzz — but "not feeling it" and "not affecting
+              your sleep" are two different things. Caffeine can delay the onset of sleep, cut into
+              your deep sleep, and fragment the night with more brief wake-ups than you'd notice
+              without a sleep tracker, even when you don't consciously feel wired.
+            </p>
+            <h3 className="text-xl font-semibold text-white pt-2">Why the cutoff time isn't the same for everyone</h3>
+            <p>
+              Genetics play a real role here — specifically a gene involved in how fast your liver
+              metabolizes caffeine. Some people clear it noticeably faster than others, which is
+              part of why your friend can have an espresso after dinner and sleep fine while the
+              same cup would wreck your night. Age matters too; caffeine sensitivity tends to
+              increase as you get older, and hormonal factors (pregnancy, for instance, roughly
+              doubles caffeine's half-life) can shift things considerably. If you already know
+              you're sensitive, treat the calculator's cutoff time as a floor, not a target — push
+              it even earlier.
+            </p>
+            <h3 className="text-xl font-semibold text-white pt-2">The sources people forget about</h3>
+            <p>
+              Coffee gets all the attention, but it's rarely the only caffeine source in a person's
+              day. Black and green tea, most sodas, energy drinks (often far more concentrated than
+              people expect), chocolate, and even some pain relievers and pre-workout supplements
+              carry meaningful amounts. If you're strict about your coffee cutoff but still have a
+              square of dark chocolate or a scoop of pre-workout in the evening, you may still be
+              undermining the exact thing you're trying to protect.
+            </p>
+            <p>
+              None of this means cutting caffeine out entirely — for most people that's neither
+              necessary nor realistic. It just means being honest about the timeline: caffeine is a
+              slow fade, not an on/off switch, and building your afternoon and evening around that
+              reality tends to pay off in noticeably better sleep within a week or two.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

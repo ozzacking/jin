@@ -202,6 +202,51 @@ export default function SleepDebt() {
             </div>
           </div>
         </div>
+
+        <div className="bg-[#1a2f45]/50 backdrop-blur border border-[#7c6aff]/20 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-white mb-6">What Sleep Debt Actually Does to You</h2>
+          <div className="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              "Sleep debt" sounds like a metaphor, but your body treats it almost exactly like a
+              real debt — the shortfall doesn't just disappear, it accumulates, and eventually
+              something has to give. The tricky part is that the effects rarely show up as dramatic
+              exhaustion right away. They creep in sideways: you're a little slower to react, a
+              little more irritable, your judgment on small decisions gets a bit fuzzier, and you
+              chalk it up to a bad day rather than three weeks of six-hour nights adding up.
+            </p>
+            <p>
+              A single rough night is easy to recover from. It's the slow accumulation — an hour
+              short here, ninety minutes short there, five nights a week for a month — that does
+              the real damage, because most people never fully catch up before the debt starts
+              compounding again the next week.
+            </p>
+            <h3 className="text-xl font-semibold text-white pt-2">Why you can't "bank" sleep in advance</h3>
+            <p>
+              One thing worth being upfront about: you can't pre-load extra sleep the way you might
+              hope. Sleeping 10 hours on Tuesday doesn't give you a buffer to draw down on Wednesday
+              and Thursday when you only get five. Sleep debt is really a one-way accumulation —
+              you can pay it back afterward, but you can't get ahead of it beforehand. That's part
+              of why the "I'll catch up this weekend" plan works less well than people hope; two
+              extra hours on Saturday chips away at a debt that took five nights to build, but it
+              rarely erases it in one shot.
+            </p>
+            <h3 className="text-xl font-semibold text-white pt-2">What actually pays it down</h3>
+            <p>
+              The most reliable fix isn't a single marathon sleep session — it's consistency.
+              Shifting your bedtime 15-20 minutes earlier for a week or two, protecting that
+              earlier bedtime even when you don't feel tired yet, tends to work better than trying
+              to sleep in dramatically on weekends. Strategic naps can help take the edge off in
+              the short term, but they're a patch, not a repayment plan on their own.
+            </p>
+            <p>
+              If the numbers above are showing a debt that's climbing week over week rather than
+              staying flat or shrinking, that's worth treating as a signal rather than background
+              noise. Chronic short sleep has been linked to real, measurable effects on mood,
+              metabolism, and long-term health — not just how sharp you feel the next morning. It's
+              usually easier to close a two-week gap than a two-year one.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

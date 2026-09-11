@@ -170,6 +170,58 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+        <div className="bg-[#1a2f45]/50 backdrop-blur border border-[#7c6aff]/20 rounded-2xl p-8 mt-8">
+          <h2 className="text-3xl font-bold text-white mb-6">
+            Why Sleep Cycles Matter More Than Total Hours
+          </h2>
+          <div className="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              Most of us grew up hearing the same advice: get eight hours of sleep. It's not wrong,
+              exactly, but it's also not the whole story. I used to set my alarm for a round number
+              — 7 hours, 8 hours, whatever fit my schedule — and I'd still wake up feeling like I'd
+              been hit by a truck some mornings and totally fine on others, even with the same
+              amount of sleep. Turns out the difference wasn't how long I slept. It was where in my
+              sleep cycle the alarm happened to go off.
+            </p>
+            <p>
+              Sleep isn't one continuous state. Your body moves through a repeating pattern —
+              light sleep, then deeper sleep, then REM (the dreaming stage), then back up toward
+              light sleep again — roughly every 90 minutes. If your alarm catches you mid-deep-sleep,
+              your brain basically gets yanked out of the middle of something it wasn't done with.
+              That's the grogginess, the feeling of wading through fog for the first hour of your
+              day. Wake up instead right as one cycle is wrapping up and the next hasn't quite
+              started, and the transition is so much smoother it almost feels unfair.
+            </p>
+            <h3 className="text-xl font-semibold text-white pt-2">How this calculator actually works</h3>
+            <p>
+              This tool works backward (or forward) from a single time you give it — either when
+              you want to fall asleep or when you need to be up — and lays out the wake times or
+              bedtimes that line up with the end of a full 90-minute cycle. It also builds in about
+              15 minutes for the average person to actually fall asleep, since almost nobody drifts
+              off the instant their head hits the pillow. None of this is guesswork dressed up as
+              science, either — 90 minutes is the widely cited average cycle length used in sleep
+              research, though it's worth saying up front that it really is an average. Some people
+              run closer to 80 minutes, others closer to 100.
+            </p>
+            <h3 className="text-xl font-semibold text-white pt-2">It's a starting point, not a rulebook</h3>
+            <p>
+              I'd treat the numbers this calculator gives you as a strong first guess rather than
+              gospel. Spend a week or two paying attention to how you actually feel when you wake
+              up at the suggested times versus your usual schedule. If 7.5 hours (five cycles)
+              leaves you dragging but 9 hours (six cycles) makes a noticeable difference, that's
+              useful information about your own rhythm — more useful, honestly, than anything a
+              calculator can tell you in isolation. Age, stress, how much you moved during the day,
+              even what you ate for dinner can nudge your actual cycle length around.
+            </p>
+            <p>
+              One more thing worth knowing: this only accounts for cycle timing, not sleep quality
+              itself. A dark, cool, quiet room and a consistent bedtime will do more for how rested
+              you feel than shaving your wake-up time to the exact minute. Think of the calculator
+              as one useful piece of a bigger picture — not the whole picture.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

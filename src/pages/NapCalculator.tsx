@@ -111,6 +111,54 @@ export default function NapCalculator() {
             </div>
           </div>
         </div>
+
+        <div className="bg-[#1a2f45]/50 backdrop-blur border border-[#7c6aff]/20 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-white mb-6">The Right Way to Think About Napping</h2>
+          <div className="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              There's a weird stigma around napping, like it's something only toddlers and cats are
+              allowed to do. But a well-timed nap isn't a sign you're falling behind — it's often
+              the fastest way to catch back up. The trick is that naps aren't all interchangeable.
+              A 20-minute nap and a 90-minute nap send you down completely different paths, and
+              picking the wrong one for your situation is how you end up more tired than when you
+              started.
+            </p>
+            <h3 className="text-xl font-semibold text-white pt-2">Why length changes everything</h3>
+            <p>
+              Short naps — anywhere from 10 to about 25 minutes — keep you in the lighter stages of
+              sleep. You get a genuine alertness bump without ever sinking into deep sleep, which
+              means there's nothing to wake you out of. That's why you can nap for 20 minutes on
+              your lunch break and walk back into a meeting fully functional, whereas a 45-minute
+              nap in the same slot can leave you groggier than if you'd just powered through tired.
+              That grogginess has a name — sleep inertia — and it happens when your alarm interrupts
+              deep sleep before your body's finished with it.
+            </p>
+            <p>
+              A full 90-minute nap sidesteps that problem entirely by giving you time to complete an
+              entire sleep cycle, deep sleep and REM included, and land back near the surface before
+              waking. It's genuinely restorative — closer to a short night's sleep than a nap — but
+              it obviously asks a lot more of your schedule, and it's really only practical if you
+              have a solid two-hour block free with nothing urgent on the other side of it.
+            </p>
+            <h3 className="text-xl font-semibold text-white pt-2">The afternoon cutoff isn't arbitrary</h3>
+            <p>
+              Napping too late in the day is probably the single most common way people sabotage
+              their own nighttime sleep without realizing it. Your body builds up "sleep pressure"
+              — basically drowsiness — throughout the day, and it's what makes you tired enough to
+              fall asleep easily at night. A late-afternoon or evening nap drains some of that
+              pressure right before bed, so you end up lying awake later than usual wondering why
+              you can't sleep, without connecting it back to the nap six hours earlier. Keeping naps
+              before 3 PM (earlier if you're sensitive to it) sidesteps that whole issue.
+            </p>
+            <p>
+              If you're someone who "can't nap" no matter what, it's often less about ability and
+              more about environment and expectations — lying down in full daylight with your phone
+              buzzing next to you isn't really giving your body a fair shot. Even 10-15 minutes of
+              genuine rest with your eyes closed in a dim, quiet spot does more than most people
+              expect, even on the days actual sleep doesn't come.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
