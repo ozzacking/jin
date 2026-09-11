@@ -243,7 +243,15 @@ export default function SleepDebt() {
               staying flat or shrinking, that's worth treating as a signal rather than background
               noise. Chronic short sleep has been linked to real, measurable effects on mood,
               metabolism, and long-term health — not just how sharp you feel the next morning. It's
-              usually easier to close a two-week gap than a two-year one.
+              usually easier to close a two-week gap than a two-year one. Our{' '}
+              <a href="/sleep-deprivation-effects" className="text-[#7c6aff] hover:underline">
+                guide to sleep deprivation's effects
+              </a>{' '}
+              covers what's actually happening in your body during a prolonged debt, and the{' '}
+              <a href="/how-to-fix-sleep-schedule-quickly" className="text-[#7c6aff] hover:underline">
+                sleep schedule reset guide
+              </a>{' '}
+              lays out a concrete week-by-week plan for paying it back.
             </p>
           </div>
         </div>

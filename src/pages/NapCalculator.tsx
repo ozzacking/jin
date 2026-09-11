@@ -155,7 +155,16 @@ export default function NapCalculator() {
               more about environment and expectations — lying down in full daylight with your phone
               buzzing next to you isn't really giving your body a fair shot. Even 10-15 minutes of
               genuine rest with your eyes closed in a dim, quiet spot does more than most people
-              expect, even on the days actual sleep doesn't come.
+              expect, even on the days actual sleep doesn't come. Our{' '}
+              <a href="/napping-benefits-guide" className="text-[#7c6aff] hover:underline">
+                full science of napping guide
+              </a>{' '}
+              goes deeper on the different nap types, and if caffeine timing around naps is a
+              question mark for you, the{' '}
+              <a href="/caffeine-cutoff" className="text-[#7c6aff] hover:underline">
+                caffeine cutoff calculator
+              </a>{' '}
+              can help you figure out whether that 4 PM coffee is fighting your nap or your bedtime.
             </p>
           </div>
         </div>

@@ -157,7 +157,16 @@ export default function CaffeineCutoff() {
               None of this means cutting caffeine out entirely — for most people that's neither
               necessary nor realistic. It just means being honest about the timeline: caffeine is a
               slow fade, not an on/off switch, and building your afternoon and evening around that
-              reality tends to pay off in noticeably better sleep within a week or two.
+              reality tends to pay off in noticeably better sleep within a week or two. If caffeine
+              isn't the only thing keeping you up, our{' '}
+              <a href="/insomnia-treatment-without-medication" className="text-[#7c6aff] hover:underline">
+                insomnia guide
+              </a>{' '}
+              covers other non-drug approaches, and the{' '}
+              <a href="/sleep-hygiene-tips" className="text-[#7c6aff] hover:underline">
+                sleep hygiene checklist
+              </a>{' '}
+              is a good next stop once your cutoff time is dialed in.
             </p>
           </div>
         </div>

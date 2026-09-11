@@ -217,8 +217,16 @@ export default function Home() {
             <p>
               One more thing worth knowing: this only accounts for cycle timing, not sleep quality
               itself. A dark, cool, quiet room and a consistent bedtime will do more for how rested
-              you feel than shaving your wake-up time to the exact minute. Think of the calculator
-              as one useful piece of a bigger picture — not the whole picture.
+              you feel than shaving your wake-up time to the exact minute — see our{' '}
+              <a href="/sleep-environment-guide" className="text-[#7c6aff] hover:underline">
+                bedroom environment guide
+              </a>{' '}
+              for specifics. Think of the calculator as one useful piece of a bigger picture, and if
+              you want the deeper science behind why 90 minutes is the magic number, our{' '}
+              <a href="/circadian-biology-guide" className="text-[#7c6aff] hover:underline">
+                guide to circadian biology
+              </a>{' '}
+              breaks down how your body clock actually works.
             </p>
           </div>
         </div>
